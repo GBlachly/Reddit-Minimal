@@ -1,6 +1,8 @@
+/*
 .App {
 
-}
+} 
+*/
 
 .App-header{
   border: 1px black solid;
@@ -12,9 +14,9 @@
   font-size: 1em;
 }
 
-/*
-.App-main {
+
+.App-main-grid {
+  display: grid;
   border: 1px black solid;
   grid-template-columns: 1fr 3fr;
 }
-*/
