@@ -1,8 +1,7 @@
-/*
 .App {
-
+  font-family: 'Times New Roman', Helvetica, san-serif;
 } 
-*/
+
 
 .App-header{
   border: 1px black solid;
@@ -14,6 +13,12 @@
   font-size: 1em;
 }
 
+
+.App-header ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
 
 .App-main-grid {
   display: grid;
