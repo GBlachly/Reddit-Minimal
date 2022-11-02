@@ -3,6 +3,16 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { fetchSubredditsAPI } from '../../api/redditapi.js';
 
+//ASYNC ACTION CREATOR
+export const fetchAllSubreddits = createAsyncThunk(
+    'subreddits/fetchAllSubreddits',
+    async () => {                                   //(??? Confused about the arguments here since i dont need a first argument. Apparent thunkAPI is not needed here, so is it ever needed in the argument??
+        const response = await fetchSubredditsAPI();
+        return response;
+    }
+);
+
+//SLICE CREATOR
 const options = {
     name: 'subreddits',
     initialState: {
@@ -13,27 +23,27 @@ const options = {
     reducers: {},
     extraReducers: {
         [fetchAllSubreddits.pending]: (state, action) => {
-            isLoading = true;
-            hasError = false;
+            state.isLoading = true;
+            state.hasError = false;
         },
         [fetchAllSubreddits.fulfilled]: (state, action) => {
-            state.subreddits.push(action.payload);
-            isLoading = false;
-            hasError = false;
+            state.subreddits = action.payload;          //Initially use state.subreddits.push(action.payload), and this did not work. Not sure why, something to think about
+            state.isLoading = false;
+            state.hasError = false;
         },
         [fetchAllSubreddits.rejected]: (state, action) => {
-            isLoading = false;
-            hasError = true;
+            state.isLoading = false;
+            state.hasError = true;
         },
     }
 };
 
-//const subredditsSlice = createSlice(options);
+const subredditsSlice = createSlice(options);
 
-const fetchAllSubreddits = createAsyncThunk(
-    'subreddits/fetchAllSubreddits',
-    async (thunkAPI) => {                                   //(??? Confused about the arguments here since i dont need a first argument)
-        const response = await fetchSubredditsAPI();
-        return response;
-    }
-);
+//EXPORTED SELECTORS/REDUCER
+export const selectSubreddits = (state) => state.subreddits.subreddits;
+export const selectIsLoading = (state) => state.subreddits.isLoading;
+export const selectHasError = (state) => state.subreddits.hasError;
+
+export default subredditsSlice.reducer;
+

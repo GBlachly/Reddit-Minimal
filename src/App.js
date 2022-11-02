@@ -20,7 +20,7 @@ function App() {
       </header>
       
       <main className='App-main-grid'>
-        <Subreddits /> 
+        <Subreddits />
         {/* <Posts /> */}
       </main>
 
