@@ -14,7 +14,7 @@ export const Posts = () => {
         <div className='Posts-container'>
             {posts.map(post => {
                 return (
-                    <Post title={post.title} score={post.score} />
+                    <Post title={post.title} score={post.score} permalink={post.permalink}/>
                 )
             })}
         </div>
