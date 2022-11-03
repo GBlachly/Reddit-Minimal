@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Subreddits } from './containers/Subreddits/Subreddits';
-//import { Posts } from './containers/Posts/Posts';
+import { Posts } from './containers/Posts/Posts';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
       
       <main className='App-main-grid'>
         <Subreddits />
-        {/* <Posts /> */}
+        <Posts />
       </main>
 
     </div>

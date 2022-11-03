@@ -7,4 +7,9 @@ export const fetchSubredditsAPI = async () => {
     return json.data.children.map((subreddit) => subreddit.data);
 };
 
+export const fetchPostsAPI = async (subName) => {
+    const response = await fetch(`${api}/${subName}.json`);
+    const json = await response.json();
 
+    return json.data.children.map((post) => post.data);
+};

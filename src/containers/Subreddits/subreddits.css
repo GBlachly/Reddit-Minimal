@@ -6,3 +6,9 @@
 .Subreddit-individual {
     margin: 10px 0;
 }
+
+.Subreddit-individual button:hover {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}

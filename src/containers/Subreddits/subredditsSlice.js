@@ -4,8 +4,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchSubredditsAPI } from '../../api/redditapi.js';
 
 //ASYNC ACTION CREATOR
-export const fetchAllSubreddits = createAsyncThunk(
-    'subreddits/fetchAllSubreddits',
+export const getAllSubreddits = createAsyncThunk(
+    'subreddits/getAllSubreddits',
     async () => {                                   //(??? Confused about the arguments here since i dont need a first argument. Apparent thunkAPI is not needed here, so is it ever needed in the argument??
         const response = await fetchSubredditsAPI();
         return response;
@@ -22,16 +22,16 @@ const options = {
     },
     reducers: {},
     extraReducers: {
-        [fetchAllSubreddits.pending]: (state, action) => {
+        [getAllSubreddits.pending]: (state, action) => {
             state.isLoading = true;
             state.hasError = false;
         },
-        [fetchAllSubreddits.fulfilled]: (state, action) => {
+        [getAllSubreddits.fulfilled]: (state, action) => {
             state.subreddits = action.payload;          //Initially use state.subreddits.push(action.payload), and this did not work. Not sure why, something to think about
             state.isLoading = false;
             state.hasError = false;
         },
-        [fetchAllSubreddits.rejected]: (state, action) => {
+        [getAllSubreddits.rejected]: (state, action) => {
             state.isLoading = false;
             state.hasError = true;
         },

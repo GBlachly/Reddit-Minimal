@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import './Subreddits.css'; 
 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectSubreddits, selectIsLoading, selectHasError, fetchAllSubreddits } from './subredditsSlice';
+import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
+import { getAllPosts } from '../Posts/postsCommentsSlice';
 
 export const Subreddits = () => {
     const subs = useSelector(selectSubreddits);
@@ -11,8 +12,13 @@ export const Subreddits = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchAllSubreddits())
-    }, [dispatch])                          //terminal gives warning when 'dispatch' is not in the dependancy array, but it seems that the app still works (for now)
+        dispatch(getAllSubreddits())
+    }, [dispatch]);                          //terminal gives warning when 'dispatch' is not in the dependancy array, but it seems that the app still works (for now)
+
+    const handleClick = (e) => {
+        const subName = e.target.value;
+        dispatch(getAllPosts(subName));
+    };
 
     if (loading) {
         return (<h1>Currently Loading</h1>)
@@ -26,8 +32,8 @@ export const Subreddits = () => {
         <div className='Subreddits-container'>
             {subs.map(sub => {
                 return (
-                    <div className='Subreddit-individual'>
-                        <p>{sub.display_name_prefixed}</p>
+                    <div className='Subreddit-individual' >
+                        <button onClick={handleClick} value={sub.display_name_prefixed}>{sub.display_name_prefixed}</button>
                         <p>{sub.subscribers}</p>
                     </div>
                 )
