@@ -44,4 +44,4 @@ export const selectPosts = (state) => state.posts.posts;
 export const selectPostsIsLoading = (state) => state.posts.isLoading;
 export const selectPostsHasError = (state) => state.posts.hasError;
 
-export const postsReducer = postsSlice.reducer;
+export default postsSlice.reducer;

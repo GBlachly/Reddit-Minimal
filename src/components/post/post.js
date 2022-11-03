@@ -1,18 +1,14 @@
 import React, {useState} from 'react'; 
 import './Post.css';
 
-
+//import { Comments } from '../../containers/Comments';
 
 export const Post = (props) => {
-    const { title, score, permalink } = props;
+    const { title, score, id, permalink } = props;
     const [showComments, setShowComments] = useState(false);
 
     const handleClick = (e) => {
         if (!showComments) {
-           /*if (!comments.length) {
-                const link = e.target.value;
-                dispatch(getAllComments(link)); 
-            } */
             setShowComments(true);
         } else {
             setShowComments(false);
@@ -21,14 +17,18 @@ export const Post = (props) => {
     
     return (
         <div className='Post-individual'>
+            
             <h1>{title}</h1>
-            <h2>{score}</h2>
-            <button onClick={handleClick} 
-            value={permalink}>
+            <h1>{score}</h1>
+            <h1>{id}</h1>
+            <h1>{permalink}</h1>
+            <button onClick={handleClick}>
                 {showComments ? 'Hide Comments' : 'Show Comments'}
             </button>
+            
             {showComments && <p>Hello</p> }
-            {/* {showComments && <Comments />} */}
+            {/* {showComments && <Comments postId={id} permalink={permalink} />} */}
+
         </div>
     )
 };

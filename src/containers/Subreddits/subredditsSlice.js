@@ -22,7 +22,7 @@ const options = {
     },
     reducers: {},
     extraReducers: {
-        [getAllSubreddits.pending]: (state, action) => {
+        [getAllSubreddits.pending]: (state, action) => {       //not entirely sure about how the brackets work here. I think it is an operator that turns whatever is in the brackets into a string
             state.isLoading = true;
             state.hasError = false;
         },

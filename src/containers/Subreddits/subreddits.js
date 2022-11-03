@@ -3,7 +3,7 @@ import './Subreddits.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
-import { getAllPosts } from '../Posts/postsCommentsSlice';
+import { getAllPosts } from '../Posts/postsSlice';
 
 export const Subreddits = () => {
     const subs = useSelector(selectSubreddits);

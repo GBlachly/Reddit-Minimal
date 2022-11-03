@@ -13,3 +13,10 @@ export const fetchPostsAPI = async (subName) => {
 
     return json.data.children.map((post) => post.data);
 };
+
+export const fetchCommentsAPI = async (permalink) => {
+    //const response = await fetch(`${api}${permalink}.json`);
+    //const json = await response.json();
+
+    //return json.map((item) => item.data);
+};
