@@ -1,4 +1,5 @@
 import React from "react";
+import './Comment.css';
 
 export const Comment = (props) => {
     const { comment } = props;
@@ -7,5 +8,5 @@ export const Comment = (props) => {
         <div className='Comment-individual'>
            <p>{comment}</p>
         </div>
-    )
+    );
 };

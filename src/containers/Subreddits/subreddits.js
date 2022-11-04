@@ -39,5 +39,5 @@ export const Subreddits = () => {
                 )
             })}
         </div>
-    )
-}
+    );
+};

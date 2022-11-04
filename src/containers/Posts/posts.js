@@ -3,7 +3,6 @@ import './Posts.css';
 
 import { useSelector } from 'react-redux';
 import { Post } from '../../components/Post/Post'
-
 import { selectPosts } from './postsSlice';
 
 
@@ -18,5 +17,5 @@ export const Posts = () => {
                 )
             })}
         </div>
-    )
-}
+    );
+};

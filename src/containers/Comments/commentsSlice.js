@@ -27,6 +27,8 @@ const options = {
         },
         [getAllComments.fulfilled]: (state, action) => {
             //change the comments related state here
+            //Going to have to push the fetched-comments-objects to state.comments.commentsObj
+            //Then somehow match up the specific post to the specific comments-object in the state
             state.commentObjs = action.payload;
 
             state.isLoading = false;
@@ -44,7 +46,11 @@ const commentsSlice = createSlice(options);
 
 //EXPORT SELECTORS AND REDUCER
 export const selectCommentObjs = (state) => state.comments.commentObjs;
+export const selectIsLoading = (state) => state.comments.isLoading;
+export const selectHasError = (state) => state.comments.hasError;
+
 export default commentsSlice.reducer;
+
 
 //const selectComments = state => state.comments.postObjects.find(postObject => postObject.id === postId).comments
     //possibly use an array of objects. One object for each post (postObjects), and the object contains an id for the post and an array of comments for the post

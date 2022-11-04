@@ -30,5 +30,5 @@ export const Post = (props) => {
             {showComments && <Comments postId={id} permalink={permalink} />}
 
         </div>
-    )
+    );
 };
