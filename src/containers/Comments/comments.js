@@ -11,14 +11,23 @@ export const Comments = (props) => {
     const { /*postId,*/ permalink } = props;
    
     const commentObjs = useSelector(selectCommentObjs);
+    //const commentObjs = useSelector(state => state.comments.commentObjs.find(commentObj => commentObj.id === postId).commentObjs);
+
     const isLoading = useSelector(selectIsLoading);
     const hasError = useSelector(selectHasError);
     const dispatch = useDispatch();
     
+    /*
+    useEffect(() => {
+        const thunkArg = { postId: postId, permalink: permalink};
+        dispatch(getAllComments(thunkArg));
+    }, [dispatch, postId, permalink]);
+    */
+    
     useEffect(() => {
         dispatch(getAllComments(permalink))
     }, [dispatch, permalink]);
-
+    
     if (isLoading) {
         return (<h1>Currently Loading</h1>);
     };

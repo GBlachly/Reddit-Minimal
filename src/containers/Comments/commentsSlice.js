@@ -11,11 +11,25 @@ export const getAllComments = createAsyncThunk(
     }
 );
 
+/*
+export const getAllComments = createAsyncThunk(
+    'comments/getAllComments',
+    async ({postId, permalink}) => {
+        const response = await fetchCommentsAPI(permalink);
+        const payload = {
+            id: postId,
+            commentObjs: response
+        };
+        return payload;
+    }
+);
+*/
+
 //COMMENTS SLICE
 const options = {
     name: 'comments',
     initialState: {
-        commentObjs: [],     //(??? This depends on what data the API will return ???)
+        commentObjs: [],     //(??? This depends on what data the API will return ???) 
         isLoading: true,
         hasError: false
     },
@@ -26,11 +40,13 @@ const options = {
             state.hasError = false;
         },
         [getAllComments.fulfilled]: (state, action) => {
-            //change the comments related state here
-            //Going to have to push the fetched-comments-objects to state.comments.commentsObj
-            //Then somehow match up the specific post to the specific comments-object in the state
+            /*change the comments related state here
+            Going to have to push the fetched-comments-objects to state.comments.commentsObj
+            Then somehow match up the specific post to the specific comments-object in the state
+            state.commentObjs.push(action.payload);
+            */
+            
             state.commentObjs = action.payload;
-
             state.isLoading = false;
             state.hasError = false;
         },
@@ -52,7 +68,7 @@ export const selectHasError = (state) => state.comments.hasError;
 export default commentsSlice.reducer;
 
 
-//const selectComments = state => state.comments.postObjects.find(postObject => postObject.id === postId).comments
+//const selectComments = state => state.comments.commentObjs.find(commentObj => commentObj.id === postId).commentObjs
     //possibly use an array of objects. One object for each post (postObjects), and the object contains an id for the post and an array of comments for the post
 
 
