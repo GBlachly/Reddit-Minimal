@@ -1,7 +1,7 @@
 import React, {useState} from 'react'; 
 import './Post.css';
 
-//import { Comments } from '../../containers/Comments';
+import { Comments } from '../../containers/Comments/Comments';
 
 export const Post = (props) => {
     const { title, score, id, permalink } = props;
@@ -26,8 +26,8 @@ export const Post = (props) => {
                 {showComments ? 'Hide Comments' : 'Show Comments'}
             </button>
             
-            {showComments && <p>Hello</p> }
-            {/* {showComments && <Comments postId={id} permalink={permalink} />} */}
+            {/* {showComments && <p>Hello</p> } */}
+            {showComments && <Comments postId={id} permalink={permalink} />}
 
         </div>
     )

@@ -15,7 +15,7 @@ export const getAllComments = createAsyncThunk(
 const options = {
     name: 'comments',
     initialState: {
-        postObjects: [],     //(??? This depends on what data the API will return ???)
+        commentObjs: [],     //(??? This depends on what data the API will return ???)
         isLoading: true,
         hasError: false
     },
@@ -27,6 +27,8 @@ const options = {
         },
         [getAllComments.fulfilled]: (state, action) => {
             //change the comments related state here
+            state.commentObjs = action.payload;
+
             state.isLoading = false;
             state.hasError = false;
         },
@@ -37,13 +39,15 @@ const options = {
     }
 };
 
-//const commentsSlice = createSlice(options);
+const commentsSlice = createSlice(options);
 
 
 //EXPORT SELECTORS AND REDUCER
+export const selectCommentObjs = (state) => state.comments.commentObjs;
+export default commentsSlice.reducer;
 
 //const selectComments = state => state.comments.postObjects.find(postObject => postObject.id === postId).comments
     //possibly use an array of objects. One object for each post (postObjects), and the object contains an id for the post and an array of comments for the post
 
-//export default commentsSlice.reducer
+
 
