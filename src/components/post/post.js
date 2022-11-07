@@ -1,7 +1,7 @@
 import React, {useState} from 'react'; 
-import './Post.css';
+import './post.css';
 
-import { Comments } from '../../containers/Comments/Comments';
+import { Comments } from '../../containers/Comments/comments';
 
 export const Post = (props) => {
     const { title, score, id, permalink } = props;

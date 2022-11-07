@@ -1,12 +1,12 @@
 import React from 'react'; 
 import './App.css';
 
-import { Subreddits } from './containers/Subreddits/Subreddits';
-import { Posts } from './containers/Posts/Posts';
+import { Subreddits } from './containers/Subreddits/subreddits';
+import { Posts } from './containers/Posts/posts';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       
       <header className="App-header">
         <h1>Welcome to my app</h1>
