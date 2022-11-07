@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react'; 
 import './Subreddits.css'; 
-
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
+
 import { getAllPosts } from '../Posts/postsSlice';
+//import { getAllPosts } from '../Posts/postsCommentsSlice';
 
 export const Subreddits = () => {
     const subs = useSelector(selectSubreddits);
