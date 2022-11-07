@@ -53,9 +53,9 @@ const options = {
             Going to have to push the fetched-comments-objects to state.comments.commentsObj
             Then somehow match up the specific post to the specific comments-object in the state*/
 
-            for (let post of state.posts) {
-                if (action.payload[0].parent_id.includes(post.id)) {
-                    post.commentObjs = action.payload;
+            for (let item of state.posts) {
+                if (action.payload[0].parent_id.includes(item.id)) {
+                    item.commentObjs = action.payload;
                 }
             };
             
@@ -77,11 +77,13 @@ const postsCommentsSlice = createSlice(options);
 export const selectPosts = (state) => state.posts.posts;
 export const selectPostsIsLoading = (state) => state.postsComments.postsLoading;
 export const selectPostsHasError = (state) => state.postsComments.postsError;
-export const selectCommentsIsLoading = (state) => state.posts.commentsLoading;
-export const selectCommentsHasError = (state) => state.posts.commentsError;
+export const selectCommentsLoading = (state) => state.posts.commentsLoading;
+export const selectCommentsError = (state) => state.posts.commentsError;
 
 export default postsCommentsSlice.reducer;
 
-const commentObjs = useSelector(state => {
-    return state.postsComments.posts.find(post => post.id === [postId]).commentObjs
+/*
+const commentObjs = useSelector((state) => {
+    return state.postsComments.posts.find(post => post.id === [postId]).commentObjs;
 });
+*/
