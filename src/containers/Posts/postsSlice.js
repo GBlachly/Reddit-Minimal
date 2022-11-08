@@ -36,7 +36,7 @@ const options = {
               .showingComments;
             if (!state.posts[action.payload].showingComments) {
               return;
-            }
+            };
             state.posts[action.payload].loadingComments = true;
             state.posts[action.payload].error = false;
         },
