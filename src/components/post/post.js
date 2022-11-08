@@ -6,6 +6,7 @@ import { Comment } from '../Comment/Comment';
 export const Post = (props) => {
     const { post, index, onToggleComments } = props;
 
+
     const renderComments = () => {
         if (post.errorComments) {
           return (

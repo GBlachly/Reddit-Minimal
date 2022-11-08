@@ -21,6 +21,19 @@ export const getAllComments = (index, permalink) => async (dispatch) => {
     }
   };
 
+/*
+export const getAllComments = createAsyncThunk(
+    'posts/getAllComments',
+    async ({index, permalink}) => {
+        const response = await fetchCommentsAPI(permalink);
+        return {
+            index: index,
+            comments: response
+        }
+    }
+);
+*/
+
 //POSTS SLICE
 const options = {
     name: 'posts',
@@ -29,7 +42,7 @@ const options = {
         isLoading: true,
         hasError: false
     },
-    reducers: {
+    reducers: { 
         startGetComments(state, action) {
             // If we're hiding comment, don't fetch the comments.
             state.posts[action.payload].showingComments = !state.posts[action.payload]
@@ -47,7 +60,7 @@ const options = {
         getCommentsFailed(state, action) {
             state.posts[action.payload].loadingComments = false;
             state.posts[action.payload].error = true;
-        },
+        }, 
     },
     extraReducers: {
         [getAllPosts.pending]: (state) => {
@@ -62,13 +75,31 @@ const options = {
         [getAllPosts.pending]: (state) => {
             state.isLoading = true;
             state.hasError = false;
+        }, /*
+        [getAllComments.pending]: (state, action) => {
+            // If we're hiding comment, don't fetch the comments.
+            state.posts[action.payload.index].showingComments = !state.posts[action.payload.imdex]
+              .showingComments;
+            if (!state.posts[action.payload.index].showingComments) {
+              return;
+            };
+            state.posts[action.payload.index].loadingComments = true;
+            state.posts[action.payload.index].error = false;
         },
+        [getAllComments.fulfilled]: (state, action) => {
+            state.posts[action.payload.index].loadingComments = false;
+            state.posts[action.payload.index].comments = action.payload.comments;
+        },
+        [getAllComments.rejected]: (state, action) => {
+            state.posts[action.payload.index].loadingComments = false;
+            state.posts[action.payload.index].error = true;
+        }, */
     }
 };
 
 const postsSlice = createSlice(options);
 
-//EXPORT SELECTORS AND REDUCERS
+//EXPORT SELECTORS, REDUCERS, AND ACTIONS
 export const selectPosts = (state) => state.posts.posts;
 export const selectPostsIsLoading = (state) => state.posts.isLoading;
 export const selectPostsHasError = (state) => state.posts.hasError;

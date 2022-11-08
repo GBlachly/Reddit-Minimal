@@ -13,9 +13,12 @@ export const getAllPosts = createAsyncThunk(
 
 export const getAllComments = createAsyncThunk(
     'postsComments/getAllComments',
-    async (permalink) => {
+    async ({index, permalink}) => {
         const response = await fetchCommentsAPI(permalink);
-        return response;
+        return {
+            index,
+            comments: response
+        }
     }
 );
 

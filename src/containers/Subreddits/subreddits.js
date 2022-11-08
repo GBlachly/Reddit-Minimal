@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'; 
 import './Subreddits.css'; 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
 
+import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
 import { getAllPosts } from '../Posts/postsSlice';
 
 export const Subreddits = () => {

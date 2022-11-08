@@ -11,9 +11,10 @@ export const Posts = () => {
     const dispatch = useDispatch();
 
     const onToggleComments = (index) => {
-        return (permalink) => {
+        const getCommentsByIndex = (permalink) => {
             dispatch(getAllComments(index, permalink))
         };
+        return getCommentsByIndex;
     };
 
     return (
