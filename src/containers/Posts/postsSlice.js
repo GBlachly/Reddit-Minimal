@@ -7,7 +7,16 @@ export const getAllPosts = createAsyncThunk(
     'posts/getAllPosts',
     async (subName) => {
         const response = await fetchPostsAPI(subName);
-        return response;
+        const postsWithMeta = response.map(post => {
+            return {
+                ...post,
+                comments: [],
+                showingComments: false,
+                loadingComments: false,
+                error: false
+            }
+        });
+        return postsWithMeta;
     }
 );
 

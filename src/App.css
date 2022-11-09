@@ -1,7 +1,14 @@
+/* CSS VARIABLES ARE DEFINED HERE (ALL SELECTORS THAT ARE DECENDENTS OF "ROOT" CLASS HAVE ACCESS TO THESE VARIABLES */
+:root {
+  --primary-color: gainsboro;
+  --secondary-color: azure;
+  --tertiary-color: white; 
+}
+
+/* APP.JS CSS DEFINITIONS HERE */
 .App {
   font-family: 'Times New Roman', Helvetica, san-serif;
 } 
-
 
 .App-header{
   border: 1px black solid;
@@ -12,7 +19,6 @@
 .App-header h1 {
   font-size: 1em;
 }
-
 
 .App-header ul {
   display: flex;
