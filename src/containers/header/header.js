@@ -19,6 +19,11 @@ export const Header = () => {
         dispatch(setSearchTerm(localSearchTerm));
     };
 
+    const clearSearch = () => {
+        setLocalSearchTerm('');
+        dispatch(setSearchTerm(localSearchTerm));
+    };
+
     return (
     <header className="header">
         <h1>Welcome to my app</h1>
@@ -32,7 +37,8 @@ export const Header = () => {
         <section className='header-search-bar' >
             <form onSubmit={handleSubmit}>
                 <input id='search-bar-input' type='text' value={localSearchTerm} onChange={handleChange}/>
-                <input id='submit-search' type='submit' value='Search Posts'/>
+                <input className='search-buttons' type='submit' value='Search Posts'/>
+                <button className='search-buttons' onClick={clearSearch} >Clear Search</button>
             </form>
         </section>
     </header>

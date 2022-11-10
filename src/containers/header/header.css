@@ -28,7 +28,7 @@
     font-family: var(--nunito-font);
 }
 
-#submit-search {
+.search-buttons {
     font-family: var(--nunito-font);
 }
 
