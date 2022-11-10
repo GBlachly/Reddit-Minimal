@@ -1,13 +1,15 @@
 import React from 'react'; 
 import './post.css';
+import { useSelector } from 'react-redux';
 
 import {TiArrowDownOutline, TiArrowUpOutline} from 'react-icons/ti';
 
 import { Comment } from '../Comment/Comment';
+import {selectSearchTerm} from '../../containers/Posts/postsSlice';
 
 export const Post = (props) => {
     const { post, index, onToggleComments } = props;
-
+    const searchTerm = useSelector(selectSearchTerm);
 
     const renderComments = () => {
         if (post.errorComments) {
@@ -39,6 +41,12 @@ export const Post = (props) => {
         return null;
       };
     
+    if (searchTerm.length) {
+      if (!post.title.toLowerCase().includes(searchTerm)) {
+        return null;
+      }
+    };
+
     return (
         <div className='Post-individual'>
           <div className='post-no-comments' >

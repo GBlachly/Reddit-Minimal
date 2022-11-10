@@ -47,11 +47,15 @@ export const getAllComments = createAsyncThunk(
 const options = {
     name: 'posts',
     initialState: {
+        searchTerm: '',
         posts: [],
         isLoading: true,
         hasError: false
     },
-    reducers: { 
+    reducers: {
+        setSearchTerm(state, action) {
+            state.searchTerm = action.payload.toLowerCase();
+        },
         startGetComments(state, action) {
             // If we're hiding comment, don't fetch the comments.
             state.posts[action.payload].showingComments = !state.posts[action.payload]
@@ -109,10 +113,11 @@ const options = {
 const postsSlice = createSlice(options);
 
 //EXPORT SELECTORS, REDUCERS, AND ACTIONS
+export const selectSearchTerm = (state) => state.posts.searchTerm;
 export const selectPosts = (state) => state.posts.posts;
 export const selectPostsIsLoading = (state) => state.posts.isLoading;
 export const selectPostsHasError = (state) => state.posts.hasError;
 
 export default postsSlice.reducer;
 
-export const { startGetComments, getCommentsSuccess, getCommentsFailed} = postsSlice.actions;
+export const { setSearchTerm, startGetComments, getCommentsSuccess, getCommentsFailed} = postsSlice.actions;
