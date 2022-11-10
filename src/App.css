@@ -3,11 +3,14 @@
   --primary-color: gainsboro;
   --secondary-color: azure;
   --tertiary-color: white; 
+  --nunito-font: 'Nunito', 'Times New Roman', sans-serif;
 }
+
+
 
 /* APP.JS CSS DEFINITIONS HERE */
 .App {
-  font-family: 'Times New Roman', Helvetica, san-serif;
+  font-family: 'Nunito', 'Times New Roman', Helvetica, san-serif;
 } 
 
 .App-header{
@@ -24,6 +27,11 @@
   display: flex;
   justify-content: space-around;
   margin-top: 25px;
+}
+
+.App-header li {
+  width: 100px;
+  text-align: center;
 }
 
 .App-main-grid {
