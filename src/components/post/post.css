@@ -28,7 +28,11 @@
     justify-content: space-around;
 }
 
-.vote-icon {
+.vote-icon-up {
+    font-size: 1.5rem;
+}
+
+.vote-icon-down {
     font-size: 1.5rem;
 }
 
