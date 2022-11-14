@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'; 
-import './Subreddits.css'; 
+import './subreddits.css'; 
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
