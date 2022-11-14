@@ -2,7 +2,7 @@ import React from 'react';
 import './posts.css';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Post } from '../../components/Post/post.js'
+import { Post } from '../../components/post/post.js'
 import { selectPosts, getAllComments } from './postsSlice';
 
 

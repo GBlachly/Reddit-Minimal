@@ -1,9 +1,9 @@
 import React from 'react'; 
-import './App.css';
+import './app.css';
 
 import { Header } from './containers/header/header';
-import { Subreddits } from './containers/Subreddits/subreddits';
-import { Posts } from './containers/Posts/posts';
+import { Subreddits } from './containers/subreddits/subreddits';
+import { Posts } from './containers/posts/posts';
 
 function App() {
   return (

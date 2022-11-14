@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 import {TiArrowDownOutline, TiArrowUpOutline} from 'react-icons/ti';
 
-import { Comment } from '../Comment/Comment';
-import {selectSearchTerm} from '../../containers/Posts/postsSlice';
+import { Comment } from '../comment/comment';
+import {selectSearchTerm} from '../../containers/posts/postsSlice';
 
 export const Post = (props) => {
     const { post, /*index,*/ onToggleComments } = props;
