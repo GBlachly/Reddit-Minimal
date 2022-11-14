@@ -1,9 +1,10 @@
 /* CSS VARIABLES ARE DEFINED HERE (ALL SELECTORS THAT ARE DECENDENTS OF "ROOT" CLASS HAVE ACCESS TO THESE VARIABLES */
 :root {
-  --primary-color: gainsboro;
-  --secondary-color: azure;
-  --tertiary-color: white; 
+  --primary-color: #DFDDDC;
+  --secondary-color: #B0A4A4;
+  --tertiary-color: #F7F1EE; 
   --nunito-font: 'Nunito', 'Times New Roman', sans-serif;
+  --bor: 1px solid black;
 }
 
 

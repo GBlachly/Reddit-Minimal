@@ -8,7 +8,7 @@ import { Comment } from '../Comment/Comment';
 import {selectSearchTerm} from '../../containers/Posts/postsSlice';
 
 export const Post = (props) => {
-    const { post, index, onToggleComments } = props;
+    const { post, /*index,*/ onToggleComments } = props;
     const searchTerm = useSelector(selectSearchTerm);
     const [upVoted, setUpVoted] = useState(false);
     const [downVoted, setDownVoted] = useState(false);
@@ -89,19 +89,19 @@ export const Post = (props) => {
 
               <div className='post-title' >
                 <h1>{post.title}</h1>
-                <h1>{post.score}</h1>
+                {/*<h1>{post.score}</h1>
                 <h1>{post.id}</h1>
-                <h1>{index}</h1>
-                <h1>{post.permalink}</h1>
+                <h1>{index}</h1> 
+                <h1>{post.permalink}</h1> */}
               </div>
 
               <div className='post-img' >
-                <img src={post.thumbnail} alt={post.title} />
+                <img src={post.thumbnail} alt='' />
               </div>
           </div>
 
           <div className='post-comments' >
-            <button onClick={() => onToggleComments(post.permalink)}>Show Comments</button>
+            <button onClick={() => onToggleComments(post.permalink)}>{!post.showingComments ? 'Show Comments' : 'Hide Comments'}</button>
             {renderComments()}
           </div>
           

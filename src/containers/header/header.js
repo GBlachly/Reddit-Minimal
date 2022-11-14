@@ -26,14 +26,14 @@ export const Header = () => {
 
     return (
     <header className="header">
-        <h1>Welcome to my app</h1>
-        <nav>
+        <h1><span>RED</span>DIT MINIMAL</h1>
+        {/*<nav>
           <ul>
             <li>HOME</li>
             <li>REDDIT</li>
             <li>SUBREDDITS</li>
           </ul>
-        </nav> 
+        </nav> */}
         <section className='header-search-bar' >
             <form onSubmit={handleSubmit}>
                 <input id='search-bar-input' type='text' value={localSearchTerm} onChange={handleChange}/>

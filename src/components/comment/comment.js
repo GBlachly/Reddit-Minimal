@@ -7,6 +7,7 @@ export const Comment = (props) => {
     return (
         <div className='Comment-individual'>
            <p>{comment}</p>
+           <hr />
         </div>
     );
 };
