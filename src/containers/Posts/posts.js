@@ -1,5 +1,5 @@
 import React from 'react'; 
-import './Posts.css';
+import './posts.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Post } from '../../components/Post/post'
