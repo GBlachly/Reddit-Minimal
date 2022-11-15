@@ -134,6 +134,9 @@
     .post-comments button{
         font-size: .6rem;
         height: 15px;
+
+        color: black;
+        border-radius: 2px;
     }
 
     .comments-loading {
@@ -164,5 +167,8 @@
     
     .post-comments button{
         font-size: .5rem;
+
+        color: black;
+        border-radius: 2px;
     }
 }
