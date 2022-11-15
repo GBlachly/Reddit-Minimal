@@ -47,12 +47,16 @@ export const getAllComments = createAsyncThunk(
 const options = {
     name: 'posts',
     initialState: {
+        selectedSub: 'r/Pics',
         searchTerm: '',
         posts: [],
         isLoading: true,
         hasError: false
     },
     reducers: {
+        setSelectedSub(state, action) {
+            state.selectedSub = action.payload;
+        },
         setSearchTerm(state, action) {
             state.searchTerm = action.payload.toLowerCase();
         },
@@ -113,6 +117,7 @@ const options = {
 const postsSlice = createSlice(options);
 
 //EXPORT SELECTORS, REDUCERS, AND ACTIONS
+export const selectedSelectedSub = (state) => state.posts.selectedSub;
 export const selectSearchTerm = (state) => state.posts.searchTerm;
 export const selectPosts = (state) => state.posts.posts;
 export const selectPostsIsLoading = (state) => state.posts.isLoading;
@@ -120,4 +125,4 @@ export const selectPostsHasError = (state) => state.posts.hasError;
 
 export default postsSlice.reducer;
 
-export const { setSearchTerm, startGetComments, getCommentsSuccess, getCommentsFailed} = postsSlice.actions;
+export const { setSelectedSub, setSearchTerm, startGetComments, getCommentsSuccess, getCommentsFailed } = postsSlice.actions;

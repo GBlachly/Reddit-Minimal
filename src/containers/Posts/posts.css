@@ -4,10 +4,22 @@
     overflow: hidden;
 } 
 
+.Posts-container .sub-title {
+    text-align: center;
+    margin: 10px 0;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
 /* MEDIA SECTION */
 @media only screen and (max-width: 768px) {
     .Posts-container {
         padding: 5px;
+    }
+
+    .Posts-container .sub-title {
+        margin: 5px 0 7px 0;
     }
 }
 

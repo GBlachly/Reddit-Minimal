@@ -3,7 +3,7 @@ import './subreddits.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
-import { getAllPosts } from '../posts/postsSlice';
+import { getAllPosts, setSelectedSub } from '../posts/postsSlice';
 
 
 export const Subreddits = () => {
@@ -19,6 +19,7 @@ export const Subreddits = () => {
     const handleClick = (e) => {
         const subName = e.target.value;
         dispatch(getAllPosts(subName));
+        dispatch(setSelectedSub(subName));
     };
 
     if (loading) {

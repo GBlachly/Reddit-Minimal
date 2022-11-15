@@ -53,7 +53,7 @@ export const Post = (props) => {
     
         if (post.loadingComments) {
           return (
-            <div>
+            <div className='comments-loading'>
               <h1>Loading</h1>
             </div>
           );
