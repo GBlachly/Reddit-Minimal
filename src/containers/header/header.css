@@ -38,7 +38,7 @@
 
 .search-buttons {
     font-family: var(--nunito-font);
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     border: .5px solid black;
     
     margin-left: 2px;
@@ -46,4 +46,11 @@
     border-radius: 2px;
 }
 
+/* MEDIA SECTION */
+@media only screen and (max-width: 768px) {
 
+}
+
+@media only screen and (max-width: 480px) {
+
+}

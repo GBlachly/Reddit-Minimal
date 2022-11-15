@@ -9,6 +9,7 @@
     padding-bottom: 5px;
     padding-left: 10%;
     display: flex;
+    overflow: hidden;
 }
 
 /*
@@ -52,16 +53,23 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 480px) {
+/* MEDIA SECTION */
+@media only screen and (max-width: 768px) {
     .subreddit-individual {
         padding-left: 2%;
     }
 
     .sub-button-text {
-        font-size: 1rem;
+        font-size: .7rem;
     }
     
     .sub-button-img {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .sub-button-text {
+        font-size: .5rem;
     }
 }

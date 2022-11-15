@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     column-gap: 10px;
+    align-items: center;
 }
 
 .post-karma {
@@ -40,8 +41,7 @@
 .post-title {
     overflow: hidden;
     text-align: center;
-    margin: auto 0;
-
+    
     font-size: 1.25rem;
 }
 
@@ -52,9 +52,9 @@
 .post-img img {
     display: block;
     margin: 0 auto;
-
+    
     height: auto;
-    width: 60%;
+    width: 70%;
 }
 
 .post-comments {
@@ -71,4 +71,86 @@
     border: .5px solid black;
     height: 24px;
     border-radius: 2px;
+}
+
+
+/* MEDIA SECTION */
+@media only screen and (max-width: 768px) {
+    .Post-individual {
+        border: 1px solid black;
+        margin: 3px auto;
+    }
+    
+    .post-no-comments {
+        display: block;
+    }
+    
+    .post-karma {
+        width: 15%;
+        height: auto;
+        padding: 3px 0;
+        
+        box-shadow: none;
+        
+        display: inline-flex;
+        vertical-align: top;
+    }
+
+    .post-karma h1 {
+        font-size: .6rem;
+    }
+    
+    .vote-icon-up {
+        font-size: .9rem;
+    }
+    
+    .vote-icon-down {
+        font-size: .9rem;
+    }
+    
+    .post-title {
+        margin-left: 5px;
+        width: 70%;
+        display: inline-block;
+        vertical-align: bottom;
+    
+        font-size: .9rem;
+    }
+    
+    .post-img img {
+        margin: 5px auto;
+        height: auto;
+        width: 60%;
+    }
+    
+    .post-comments button{
+        font-size: .6rem;
+        height: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .post-karma h1 {
+        font-size: .5rem;
+    }
+    
+    .vote-icon-up {
+        font-size: .75rem;
+    }
+    
+    .vote-icon-down {
+        font-size: .75rem;
+    }
+    
+    .post-title {
+        font-size: .75rem;
+    }
+    
+    .post-img img {
+        width: 80%;
+    }
+    
+    .post-comments button{
+        font-size: .5rem;
+    }
 }

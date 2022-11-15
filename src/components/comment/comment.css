@@ -6,3 +6,16 @@
 .Comment-individual hr {
     width: 80%;
 }
+
+/* MEDIA SECTION */
+@media only screen and (max-width: 768px) {
+    .Comment-individual {
+        font-size: .75rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Comment-individual {
+        font-size: .6rem;
+    }
+}

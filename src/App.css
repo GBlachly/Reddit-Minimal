@@ -18,3 +18,13 @@
   border: 1px black solid;
   grid-template-columns: 1fr 3fr;
 }
+
+/* MEDIA SECTION */
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+  
+
+}
