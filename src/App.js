@@ -2,8 +2,8 @@ import React from 'react';
 import './app.css';
 
 import { Header } from './containers/header/header';
-import { Subreddits } from './containers/subreddits/subreddits';
-import { Posts } from './containers/posts/posts';
+import { Subreddits } from './containers/Subreddits/subreddits';
+import { Posts } from './containers/Posts/posts';
 
 function App() {
   return (

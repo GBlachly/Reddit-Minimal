@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './posts.css';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Post } from '../../components/post/post.js'
+import { Post } from '../../components/post/post'
 import { selectPosts, getAllComments, getAllPosts, selectedSelectedSub } from './postsSlice';
 
 

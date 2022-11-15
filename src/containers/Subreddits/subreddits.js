@@ -3,7 +3,7 @@ import './subreddits.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectSubreddits, selectIsLoading, selectHasError, getAllSubreddits } from './subredditsSlice';
-import { getAllPosts, setSelectedSub } from '../posts/postsSlice';
+import { getAllPosts, setSelectedSub } from '../Posts/postsSlice';
 
 
 export const Subreddits = () => {

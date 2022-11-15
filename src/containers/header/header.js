@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './header.css';
 
 import { useDispatch } from "react-redux";
-import { setSearchTerm } from '../posts/postsSlice';
+import { setSearchTerm } from '../Posts/postsSlice';
 
 export const Header = () => {
     const [localSearchTerm, setLocalSearchTerm] = useState('');
