@@ -61,6 +61,7 @@
 
     .sub-button-text {
         font-size: .7rem;
+        color: black;
     }
     
     .sub-button-img {
@@ -71,5 +72,6 @@
 @media only screen and (max-width: 480px) {
     .sub-button-text {
         font-size: .5rem;
+        color: black;
     }
 }
