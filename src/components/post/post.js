@@ -63,7 +63,7 @@ export const Post = (props) => {
           return (
             <div>
               {post.comments.map((comment) => (
-                <Comment comment={comment.body} />
+                <Comment comment={comment.body} time={comment.created_utc}/>
               ))}
             </div>
           );
@@ -102,6 +102,7 @@ export const Post = (props) => {
 
           <div className='post-comments' >
             <button onClick={() => onToggleComments(post.permalink)}>{!post.showingComments ? 'Show Comments' : 'Hide Comments'}</button>
+            {/* {post.created_utc} use Date() to show time since posted */}
             {renderComments()}
           </div>
           

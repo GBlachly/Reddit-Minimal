@@ -61,7 +61,6 @@ const options = {
             state.searchTerm = action.payload.toLowerCase();
         },
         startGetComments(state, action) {
-            // If we're hiding comment, don't fetch the comments.
             state.posts[action.payload].showingComments = !state.posts[action.payload]
               .showingComments;
             if (!state.posts[action.payload].showingComments) {
