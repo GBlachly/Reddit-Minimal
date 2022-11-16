@@ -45,7 +45,7 @@ export const Post = (props) => {
 
 
     const renderImage = () => {
-      if (post.url.includes('.jpg')) {
+      if (post.url.includes('.jpg') || post.url.includes('gallery')) {
         return (
           <div className='post-img' >
             <img src={post.url} alt='' />
