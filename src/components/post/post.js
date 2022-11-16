@@ -44,7 +44,7 @@ export const Post = (props) => {
     };
 
     const renderImage = () => {
-      if(post.thumbnail.length >= 5) {
+      if (post.url.includes('.jpeg')) {
         return (
           <div className='post-img' >
             <img src={post.url} alt='' />
