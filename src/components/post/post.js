@@ -43,9 +43,8 @@ export const Post = (props) => {
       setUpVoted(false);
     };
 
-
     const renderImage = () => {
-      if (post.url.includes('.jpg') || post.url.includes('gallery')) {
+      if (post.url.includes('.jpg')) {
         return (
           <div className='post-img' >
             <img src={post.url} alt='' />
@@ -104,15 +103,12 @@ export const Post = (props) => {
 
               <div className='post-title' >
                 <h1>{post.title}</h1>
-                {/*<h1>{post.score}</h1>
+                {/* <h1>{post.score}</h1>
                 <h1>{post.id}</h1>
                 <h1>{index}</h1> 
                 <h1>{post.permalink}</h1> */}
               </div>
 
-              {/* <div className='post-img' >
-                <img src={post.url} alt='' />
-              </div> */}
               {renderImage()}
 
           </div>
