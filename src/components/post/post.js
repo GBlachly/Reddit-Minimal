@@ -44,7 +44,7 @@ export const Post = (props) => {
     };
 
     const renderImage = () => {
-      if (post.url.includes('.jpg')) {
+      if (post.url.includes('.jpg') || post.url.includes('.png')) {
         return (
           <div className='post-img' >
             <img src={post.url} alt='' />
@@ -110,7 +110,6 @@ export const Post = (props) => {
               </div>
 
               {renderImage()}
-
           </div>
 
           <div className='post-comments' >
