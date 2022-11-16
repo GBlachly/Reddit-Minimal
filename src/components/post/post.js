@@ -42,6 +42,21 @@ export const Post = (props) => {
       setUpVoted(false);
     };
 
+    const renderImage = () => {
+      if(post.thumbnail.length) {
+        return (
+          <div className='post-img' >
+            <img src={post.thumbnail} alt='' />
+          </div>
+        )
+      };
+
+      return (
+        <div className='post-img' >
+        </div>
+      );
+    };
+
     const renderComments = () => {
         if (post.errorComments) {
           return (
@@ -70,7 +85,7 @@ export const Post = (props) => {
         }
     
         return null;
-      };
+    };
     
     if (searchTerm.length) {
       if (!post.title.toLowerCase().includes(searchTerm)) {
@@ -95,9 +110,7 @@ export const Post = (props) => {
                 <h1>{post.permalink}</h1> */}
               </div>
 
-              <div className='post-img' >
-                <img src={post.thumbnail} alt='' />
-              </div>
+              {renderImage()}
           </div>
 
           <div className='post-comments' >
