@@ -44,7 +44,7 @@ export const Post = (props) => {
     };
 
 
-    /* const renderImage = () => {
+    const renderImage = () => {
       if (post.thumbnail.length >= 5) {
         return (
           <div className='post-img' >
@@ -54,7 +54,7 @@ export const Post = (props) => {
       };
 
       return null;
-    }; */
+    }; 
 
 
     const renderComments = () => {
@@ -110,10 +110,10 @@ export const Post = (props) => {
                 <h1>{post.permalink}</h1> */}
               </div>
 
-              <div className='post-img' >
+              {/* <div className='post-img' >
                 <img src={post.url} alt='' />
-              </div>
-              {/*renderImage()*/}
+              </div> */}
+              {renderImage()}
 
           </div>
 
