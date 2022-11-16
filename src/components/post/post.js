@@ -51,10 +51,7 @@ export const Post = (props) => {
         )
       };
 
-      return (
-        <div className='post-img' >
-        </div>
-      );
+      return null;
     };
 
     const renderComments = () => {
