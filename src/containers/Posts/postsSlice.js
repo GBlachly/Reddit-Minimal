@@ -47,7 +47,7 @@ export const getAllComments = createAsyncThunk(
 const options = {
     name: 'posts',
     initialState: {
-        selectedSub: 'r/Pics',
+        selectedSub: 'r/pics',
         searchTerm: '',
         posts: [],
         isLoading: true,
