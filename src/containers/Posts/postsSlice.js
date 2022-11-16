@@ -85,12 +85,12 @@ const options = {
         },
         [getAllPosts.fulfilled]: (state, action) => {
             state.posts = action.payload;
-            state.isLoading = true;
+            state.isLoading = false;
             state.hasError = false;
         },
-        [getAllPosts.pending]: (state) => {
-            state.isLoading = true;
-            state.hasError = false;
+        [getAllPosts.rejected]: (state) => {
+            state.isLoading = false;
+            state.hasError = true;
         }, /*
         [getAllComments.pending]: (state, action) => {
             // If we're hiding comment, don't fetch the comments.

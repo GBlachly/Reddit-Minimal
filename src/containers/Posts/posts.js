@@ -3,12 +3,13 @@ import './posts.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Post } from '../../components/post/post'
-import { selectPosts, getAllComments, getAllPosts, selectedSelectedSub } from './postsSlice';
+import { selectPosts, getAllComments, getAllPosts, selectedSelectedSub, selectPostsIsLoading } from './postsSlice';
 
 
 export const Posts = () => {
     const posts = useSelector(selectPosts);
     const selectedSub = useSelector(selectedSelectedSub);
+    const postsLoading = useSelector(selectPostsIsLoading);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -22,14 +23,24 @@ export const Posts = () => {
         return getCommentsByIndex;
     };
 
-    return (
+    if (postsLoading) {
+        return (
         <div className='Posts-container'>
             <h1 className='sub-title'>{selectedSub}</h1>
-            {posts.map((post, index) => {
-                return (
-                    <Post post={post} index={index} onToggleComments={onToggleComments(index)}/>
-                )
-            })}
         </div>
-    );
+        )
+    };
+
+    if (!postsLoading) {
+        return (
+            <div className='Posts-container'>
+                <h1 className='sub-title'>{selectedSub}</h1>
+                {posts.map((post, index) => {
+                    return (
+                        <Post post={post} index={index} onToggleComments={onToggleComments(index)}/>
+                    )
+                })}
+            </div>
+        );
+    };
 };
