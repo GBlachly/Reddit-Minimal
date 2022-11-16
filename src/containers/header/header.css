@@ -30,6 +30,8 @@
 .header-search-bar {
     margin-top: 17px;
     font-family: var(--nunito-font);
+    display: flex;
+    justify-content: center;
 }
 
 #search-bar-input {
@@ -60,5 +62,15 @@
         color: black;
         border-radius: 3px;
         font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #search-bar-input {
+        width: 100px;
+    }
+
+    .search-buttons {
+       font-size: .6rem;
     }
 }
