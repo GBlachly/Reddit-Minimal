@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './post.css';
 import { useSelector } from 'react-redux';
 
+//import moment from 'moment';
 import {TiArrowDownOutline, TiArrowUpOutline} from 'react-icons/ti';
 
 import { Comment } from '../comment/comment';
@@ -42,17 +43,19 @@ export const Post = (props) => {
       setUpVoted(false);
     };
 
+    /*
     const renderImage = () => {
       if(post.thumbnail.length >= 5) {
         return (
           <div className='post-img' >
-            <img src={post.thumbnail} alt='' />
+            <img src={post.url} alt='' />
           </div>
         )
       };
 
       return null;
     };
+    */
 
     const renderComments = () => {
         if (post.errorComments) {
@@ -106,13 +109,16 @@ export const Post = (props) => {
                 <h1>{index}</h1> 
                 <h1>{post.permalink}</h1> */}
               </div>
-
-              {renderImage()}
+              <div className='post-img' >
+                <img src={post.url} alt='' />
+              </div>  
+              {/*renderImage()*/}
           </div>
 
           <div className='post-comments' >
+            {/* <span>{moment.unix(post.created_utc).fromNow()}</span> */}
             <button onClick={() => onToggleComments(post.permalink)}>{!post.showingComments ? 'Show Comments' : 'Hide Comments'}</button>
-            {/* {post.created_utc} use Date() to show time since posted */}
+            
             {renderComments()}
           </div>
           

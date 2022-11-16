@@ -66,6 +66,10 @@
     font-family: var(--nunito);
 }
 
+/* .post-comments span{
+   
+} */
+
 .post-comments button{
     font-family: var(--nunito);
     background-color: var(--tertiary-color);
