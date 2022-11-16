@@ -43,9 +43,8 @@ export const Post = (props) => {
       setUpVoted(false);
     };
 
-    /*
-    const renderImage = () => {
-      if(post.thumbnail.length >= 5) {
+    /* const renderImage = () => {
+      if (post.thumbnail.length >= 5) {
         return (
           <div className='post-img' >
             <img src={post.url} alt='' />
@@ -54,8 +53,7 @@ export const Post = (props) => {
       };
 
       return null;
-    };
-    */
+    }; */
 
     const renderComments = () => {
         if (post.errorComments) {
@@ -111,7 +109,7 @@ export const Post = (props) => {
               </div>
               <div className='post-img' >
                 <img src={post.url} alt='' />
-              </div>  
+              </div>
               {/*renderImage()*/}
           </div>
 
