@@ -43,7 +43,7 @@ export const Post = (props) => {
     };
 
     const renderImage = () => {
-      if(post.thumbnail.length) {
+      if(post.thumbnail.length >= 5) {
         return (
           <div className='post-img' >
             <img src={post.thumbnail} alt='' />
