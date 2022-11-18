@@ -54,6 +54,12 @@
 }
 
 /* MEDIA SECTION */
+@media only screen and (min-width: 768px) {
+    .Subreddits-container {
+        min-width: 265px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .subreddit-individual {
         padding-left: 2%;

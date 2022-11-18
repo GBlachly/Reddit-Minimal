@@ -45,24 +45,16 @@
     
     margin-left: 2px;
     height: 24px;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 /* MEDIA SECTION */
 @media only screen and (max-width: 768px) {
-    .search-buttons {
-        color: black;
-        border-radius: 3px;
-        font-weight: 400;
-    }
+    
 }
 
 @media only screen and (max-width: 480px) {
-    .search-buttons {
-        color: black;
-        border-radius: 3px;
-        font-weight: 400;
-    }
+    
 }
 
 @media only screen and (max-width: 380px) {
@@ -74,13 +66,11 @@
        font-size: .6rem;
     }
 
-    #search-btn {
-        border-radius: 0px;
-        border: .5px solid black;
+    /* #search-btn {
+        
     }
 
     #clear-btn {
-        border-radius: 0px;
-        border: .5px solid black;
-    }
+        
+    } */
 }
