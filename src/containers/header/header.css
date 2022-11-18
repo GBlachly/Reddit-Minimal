@@ -50,11 +50,19 @@
 
 /* MEDIA SECTION */
 @media only screen and (max-width: 768px) {
-    
+    .search-buttons {
+        color: black;
+        border-radius: 3px;
+        font-weight: 400;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    
+    .search-buttons {
+        color: black;
+        border-radius: 3px;
+        font-weight: 400;
+    }
 }
 
 @media only screen and (max-width: 380px) {
@@ -63,7 +71,11 @@
     }
 
     .search-buttons {
-       font-size: .6rem;
+        color: black;
+        border-radius: 3px;
+        font-weight: 400;
+       
+        font-size: .6rem;
     }
 
     /* #search-btn {
