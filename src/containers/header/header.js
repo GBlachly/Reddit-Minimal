@@ -37,7 +37,7 @@ export const Header = () => {
         <section className='header-search-bar' >
             <form onSubmit={handleSubmit}>
                 <input id='search-bar-input' type='text' value={localSearchTerm} onChange={handleChange}/>
-                <input className='search-buttons' id='search-btn' type='submit' value='Search Posts'/>
+                <button className='search-buttons' id='search-btn' type='submit'>Search Posts</button>
                 <button className='search-buttons' id='clear-btn' onClick={clearSearch} >Clear Search</button>
             </form>
         </section>
