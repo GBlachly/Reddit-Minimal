@@ -9,8 +9,8 @@ export const Header = () => {
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
-        const searchTerm = e.target.value.replace(/\s+/g, '');
-        setLocalSearchTerm(searchTerm);
+        const searchTerm = e.target.value;
+        setLocalSearchTerm(`r/${searchTerm}`);
         //dispatch(setSearchTerm(localSearchTerm));
     };
 
