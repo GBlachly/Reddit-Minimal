@@ -10,15 +10,13 @@ export const Header = () => {
 
     const handleChange = (e) => {
         const searchTerm = e.target.value;
-        setLocalSearchTerm(`r/${searchTerm}`);
+        setLocalSearchTerm(searchTerm);
         //dispatch(setSearchTerm(localSearchTerm));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //dispatch(setSearchTerm(localSearchTerm));
-        dispatch(getAllPosts(localSearchTerm));
-        dispatch(setSelectedSub(localSearchTerm));
+        dispatch(setSearchTerm(localSearchTerm));
     };
 
     const clearSearch = () => {
