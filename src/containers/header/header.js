@@ -9,14 +9,16 @@ export const Header = () => {
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
-        const searchTerm = e.target.value;
+        const searchTerm = e.target.value.replace(/\s+/g, '');
         setLocalSearchTerm(searchTerm);
         //dispatch(setSearchTerm(localSearchTerm));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(setSearchTerm(localSearchTerm));
+        //dispatch(setSearchTerm(localSearchTerm));
+        dispatch(getAllPosts(localSearchTerm));
+        dispatch(setSelectedSub(localSearchTerm));
     };
 
     const clearSearch = () => {
